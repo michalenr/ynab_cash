@@ -28,14 +28,4 @@ const App: () => React$Node = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  view: {
-    backgroundColor: 'white',
-    flex: 1
-  },
-  textInput: {
-    height: 200,
-  }
-});
-
 export default App;
