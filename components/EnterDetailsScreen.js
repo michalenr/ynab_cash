@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import { Picker } from '@react-native-community/picker';
+import DatePicker from 'react-native-datepicker'
 
 const EnterDetailsScreen = ({ back }) => {
   
@@ -22,13 +23,27 @@ const EnterDetailsScreen = ({ back }) => {
       <View style={styles.view}>
         <Picker 
           selectedValue={category}
-          placeholder='How much did you spend?'
           onValueChange={v => setCategory(v)}
         >
           <Picker.Item label="Groceries" value="groceries" />
           <Picker.Item label="Utilities" value="utilities" />
         </Picker>
-
+        <Picker 
+          selectedValue={payee}
+          onValueChange={v => setPayee(v)}
+        >
+          <Picker.Item label="Supermarket" value="supermarket" />
+          <Picker.Item label="Cafe" value="cafe" />
+        </Picker>
+        <TextInput
+          placeholder='Enter memo'
+          defaultValue={memo}
+          onChangeText={t => setMemo(t)}
+        />
+        <DatePicker 
+          mode='date'
+          onDateChange={d => setDate(d)}
+        />
       <Button title='Back' onPress={() => back(1)}/>
       <Button title='Save' onPress={() => back(1)}/>
 
