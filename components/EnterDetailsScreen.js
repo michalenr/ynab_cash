@@ -22,6 +22,7 @@ const EnterDetailsScreen = ({ back }) => {
     <>
       <View style={styles.view}>
         <Picker 
+          style={styles.input}
           selectedValue={category}
           onValueChange={v => setCategory(v)}
         >
@@ -29,6 +30,7 @@ const EnterDetailsScreen = ({ back }) => {
           <Picker.Item label="Utilities" value="utilities" />
         </Picker>
         <Picker 
+          style={styles.input}
           selectedValue={payee}
           onValueChange={v => setPayee(v)}
         >
@@ -36,11 +38,13 @@ const EnterDetailsScreen = ({ back }) => {
           <Picker.Item label="Cafe" value="cafe" />
         </Picker>
         <TextInput
+          style={styles.input}
           placeholder='Enter memo'
           defaultValue={memo}
           onChangeText={t => setMemo(t)}
         />
         <DatePicker 
+          style={styles.input}
           mode='date'
           onDateChange={d => setDate(d)}
         />
@@ -56,8 +60,14 @@ const EnterDetailsScreen = ({ back }) => {
 const styles = StyleSheet.create({
   view: {
     backgroundColor: 'white',
-    flex: 1
+    flex: 1,
+    paddingTop: 30,
+    paddingLeft: 20,
+    paddingRight: 30
   },
+  input: {
+    marginBottom: 20,
+  }
 });
 
 export default EnterDetailsScreen;
